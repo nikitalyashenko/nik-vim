@@ -24,6 +24,15 @@ require("theprimeagen.harpoon")
 require("theprimeagen.venn")
 require("theprimeagen.lsp")
 require("theprimeagen.nvim-treesitter-context")
+require('lualine').get_config()
+require('lualine').setup()
+
+
+ require("trouble").setup {
+   -- your configuration comes here
+   --     -- or leave it empty to use the default settings
+   --         -- refer to the configuration section below
+ }
 
 require("refactoring.config").setup({
 	formatting = {

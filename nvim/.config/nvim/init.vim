@@ -82,17 +82,25 @@ Plug 'sbdchd/neoformat'
 " should I try another status bar???
 "  Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 " Plug 'hoob3rt/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 
+Plug 'ThePrimeagen/harpoon'
+Plug 'ThePrimeagen/vim-with-me'
+Plug 'ThePrimeagen/git-worktree.nvim'
+Plug 'ThePrimeagen/refactoring.nvim'
+Plug 'ThePrimeagen/jvim.nvim'
+Plug 'romgrk/nvim-treesitter-context'
+Plug 'ThePrimeagen/tree-navigation'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'prettier/vim-prettier', {
+    \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'branch': 'release/0.x'
+  \ }
+
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
 call plug#end()
-
-" Adding local modules
-let &runtimepath.=',' . expand("$HOME") . '/personal/harpoon/master'
-let &runtimepath.=',' . expand("$HOME") . '/personal/vim-with-me/ui'
-let &runtimepath.=',' . expand("$HOME") . '/personal/git-worktree.nvim/master'
-let &runtimepath.=',' . expand("$HOME") . '/personal/refactoring.nvim/master'
-let &runtimepath.=',' . expand("$HOME") . '/personal/jvim.nvim'
-let &runtimepath.=',' . expand("$HOME") . '/personal/nvim-treesitter-context'
-let &runtimepath.=',' . expand("$HOME") . '/personal/tree-navigation'
 
 " let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB' ]
 
@@ -107,6 +115,18 @@ endif
 
 let loaded_matchparen = 1
 let mapleader = " "
+
+
+
+
+nnoremap <leader>xx <cmd>TroubleToggle<cr>
+nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
+nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
+nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
+nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
+nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+
+
 
 nnoremap <silent> Q <nop>
 nnoremap <silent> <C-f> :silent !tmux neww tmux-sessionizer<CR>
